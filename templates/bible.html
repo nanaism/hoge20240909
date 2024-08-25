@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis</title>
+    <style>
+        body {
+            text-align: left; /* 左寄せに設定 */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            letter-spacing: normal; /* 文字間隔をデフォルトに設定 */
+        }
+        h2, h3, p {
+            margin-left: 0;
+            letter-spacing: normal; /* 見出しや段落の文字間隔をデフォルトに設定 */
+        }
+        ruby {
+            font-size: 24px;
+            letter-spacing: normal; /* ルビの文字間隔もデフォルトに設定 */
+        }
+        rt {
+            font-size: 16px;
+            color: #555;
+            letter-spacing: normal; /* ルビテキストの文字間隔をデフォルトに設定 */
+        }
+        .sep {
+            color: white;
+            padding: 0 5px; 
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            margin: 0;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        .content {
+            margin-top: 60px; /* Offset the content to account for the fixed header */
+            margin-left: 1em;
+            // line-height: 1em;
+            // max-width: 90%;
+        }
+        .toggle-button {
+            background-color: #FFD700;
+            color: black;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .toggle-button:hover {
+            background-color: #FFD700;
+        }
+        .c1 {
+            color: #FFD700;    
+        }
+        .c2 {
+            color: white;    
+        }
+        a:link,
+        a:visited,
+        a:hover,
+        a:active {
+            color: inherit; /* 親要素の色を引き継ぐ */
+            text-decoration: none; /* 下線を削除 */
+        }
+    </style>
+</head>
+<script>
+    function toggleRubi() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const isRubi = urlParams.get('rubi') === 'true';
+        urlParams.set('rubi', !isRubi);
+        window.location.search = urlParams.toString();
+    }
+</script>
+<body>
+    <div class="header">
+        <span class="c1">
+            <a href="/">ASMRキリスト教会</a>
+        </span>
+        <span class="sep">|</span>
+        <span class="c2">
+            聖書
+        </span>
+        <span class="sep">|</span>
+        <button class="toggle-button" onclick="toggleRubi()">
+            {% if is_rubi %}
+                ルビを外す
+            {% else %}
+                ルビを付ける
+            {% endif %}
+        </button>
+    </div>
+    <div class="content">
+      <h2>
+          {% for word, furigana in title %}
+              <ruby>{{ word }}<rt>{{ furigana }}</rt></ruby>
+          {% endfor %}
+      </h2>
+      
+      {% for chapter in chapters %}
+          <h3>第{{ chapter.id }}章</h3>
+          {% for verse in chapter.verses %}
+              {% if verse.hideId %}
+              {% else %}
+                  <p><strong>{{ verse.id }} </strong>
+              {% endif %}
+                  {% for word, furigana in verse.words %}
+                      {% if is_rubi %}
+                          <ruby>{{ word }}<rt>{{ furigana }}</rt></ruby>
+                      {% else %}
+                          {{ word }}
+                      {% endif %}
+                  {% endfor %}
+              </p>
+          {% endfor %}
+      {% endfor %}
+    </div>
+</body>
+</html>
