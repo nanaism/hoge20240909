@@ -80,6 +80,7 @@ def bible(section='genesis'):
                 verse_id = ''
                 i = 0
                 for line in lg.findall('l'):
+                    verse_text = []
                     hideId = True
                     is_lg = True 
 
