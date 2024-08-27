@@ -36,6 +36,7 @@ def create_key(verse_id):
 obsolete_sections = [
     "lamentations",
     "ezekiel",
+    "daniel",
 ]
 
 @app.route('/bible/<section>')
