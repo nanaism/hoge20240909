@@ -37,6 +37,18 @@ obsolete_sections = [
     "lamentations",
     "ezekiel",
     "daniel",
+    "hosea",
+    "joel",
+    "amos",
+    "obadiah",
+    "jonah",
+    "micah",
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "haggai",
+    "zechariah",
+    "malachi",
 ]
 
 @app.route('/bible/<section>')
