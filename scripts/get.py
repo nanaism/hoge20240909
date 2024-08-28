@@ -1,22 +1,188 @@
 #!/usr/bin/env python3
 
 from selenium import webdriver
-import time
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import re
+import time
+
+book = "matthew"
 
 driver = webdriver.Chrome()
 
-driver.get("https://archive.md/2013.05.02-115858/http://bible.salterrae.net/kougo/html/")
+def parse_norm(text):
+    return "<h2" + text.split("<!--[if !IE]>")[0].split("<h2")[2]
 
-element = driver.find_element(By.XPATH, '//*[@id="CONTENT"]/div[1]/div/div/ul[1]/li[1]/a')
-element.click()
+def parse_ruby(text):
+    return "<h2" + text.split("<h2")[1].split("</body>")[0]
 
-page_content = driver.page_source
+def write(file_path, content):
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(content)
 
-file_path = "template/old/norm"
+books = [
+    "matthew",
+    "mark",
+    "luke",
+    "john",
+    "acts",
+    "romans",
+    "1corintians",
+    "2corintians",
+    "galatians",
+    "ephesians",
+    "philippians",
+    "colossians",
+    "1thessalonians",
+    "2thessalonians",
+    "1timothy",
+    "2timothy",
+    "titus",
+    "philemon",
+    "hebrews",
+    "james",
+    "1peter",
+    "2peter",
+    "1john",
+    "2john",
+    "3john",
+    "jude",
+    "revelation",
+    "genesis",
+    "exodus",
+    "leviticus",
+    "numbers",
+    "deuteronomy",
+    "joshua",
+    "judges",
+    "ruth",
+    "1samuel",
+    "2samuel",
+    "1kings",
+    "2kings",
+    "1chronicles",
+    "2chronicles",
+    "ezra",
+    "nehemiah",
+    "esther",
+    "job",
+    "psalms",
+    "proverbs",
+    "ecclesiastes",
+    "songofsongs",
+    "isaiah",
+    "jeremiah",
+    "lamentations",
+    "ezekiel",
+    "daniel",
+    "hosea",
+    "joel",
+    "amos",
+    "obadiah",
+    "jonah",
+    "micah",
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "haggai",
+    "zecariah",
+    "malachi"
+]
 
-with open(file_path, 'w', encoding='utf-8') as file:
-    file.write(page_content)
+for book in books:
+    print(f"progress: norm: {book}")
+    driver.get(f"https://archive.md/o/QzsP1/bible.salterrae.net/kougo/html/{book}.html")
+    page_content = driver.page_source
+    file_path    = f"templates/old/norm/{book}.htm"
+    write(file_path, parse_norm(page_content))
 
-time.sleep(1000)
+books = [
+    "matthew",
+    "mark",
+    "luke",
+    "john",
+    "acts",
+    "romans",
+    "1corintians",
+    "2corintians",
+    "galatians",
+    "ephesians",
+    "philippians",
+    "colossians",
+    "1thessalonians",
+    "2thessalonians",
+    "1timothy",
+    "2timothy",
+    "titus",
+    "philemon",
+    "hebrews",
+    "james",
+    "1peter",
+    "2peter",
+    "1john",
+    "2john",
+    "3john",
+    "jude",
+    "revelation",
+    "genesis_12",
+    "genesis_3",
+    "exodus",
+    "leviticus",
+    "numbers",
+    "deuteronomy",
+    "joshua",
+    "judges",
+    "ruth",
+    "1samuel",
+    "2samuel",
+    "1kings",
+    "2kings",
+    "1chronicles",
+    "2chronicles",
+    "ezra",
+    "nehemiah",
+    "esther",
+    "job",
+    "psalms_12",
+    "psalms_345",
+    "proverbs",
+    "ecclesiastes",
+    "songofsongs",
+    "isaiah_1",
+    "isaiah_2",
+    "jeremiah_1",
+    "jeremiah_2",
+    "lamentations",
+    "ezekiel_1",
+    "ezekiel_2",
+    "daniel",
+    "hosea",
+    "joel",
+    "amos",
+    "obadiah",
+    "jonah",
+    "micah",
+    "nahum",
+    "habakkuk",
+    "zephaniah",
+    "haggai",
+    "zecariah",
+    "malachi"
+]
+
+for book in books:
+    print(f"progress: ruby: {book}")
+    driver.get(f"https://web.archive.org/web/20221020011720/http://bible.salterrae.net/kougo/xml/{book}.xml")
+    iframe = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "playback"))
+    )
+    driver.switch_to.frame(iframe)
+    page_content = driver.page_source
+    file_path    = f"templates/old/ruby/{book}.htm"
+    write(file_path, parse_ruby(page_content))
+
+print(parse_ruby(page_content))
+
 driver.quit()
+
