@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import '../styles.css';
 
 function Header() {
-  const [isRubi, setIsRubi] = useState(false);
-  const toggleRubi = () => {
+  const [isRuby, setIsRubi] = useState(false);
+  const toggleRuby = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const isRubi = urlParams.get('rubi') === 'true';
-    urlParams.set('rubi', (!isRubi).toString());
+    const isRuby = urlParams.get('ruby') === 'true';
+    urlParams.set('ruby', (!isRuby).toString());
     window.location.search = urlParams.toString();
   };
 
@@ -16,8 +16,8 @@ function Header() {
         <a href="/">ASMRキリスト教会</a>
       </span>
       <span className="sep">|</span>
-      <button className="toggle-button" onClick={toggleRubi}>
-        {new URLSearchParams(window.location.search).get('rubi') === 'true' ? 'ルビを外す' : 'ルビを付ける'}
+      <button className="toggle-button" onClick={toggleRuby}>
+        {new URLSearchParams(window.location.search).get('ruby') === 'true' ? 'ルビを外す' : 'ルビを付ける'}
       </button>
     </div>
   );

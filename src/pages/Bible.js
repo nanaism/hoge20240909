@@ -5,16 +5,17 @@ import Header from '../components/Header';
 function Bible() {
   const { section } = useParams();
   const [searchParams] = useSearchParams();
-  const isRuby = searchParams.get('ruby') === 'true';
-  const type = isRuby ? "ruby" : "norm";
   const [content, setContent] = useState('');
 
   useEffect(() => {
+    const isRuby = searchParams.get('ruby') === 'true';
+    const type = isRuby ? "ruby" : "norm";
+
     fetch(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`)
       .then(response => response.text())
       .then(data => setContent(data))
       .catch(error => console.error('Error loading the HTML content:', error));
-  }, [section]);
+  }, [section, searchParams]); // Include searchParams as a dependency
 
   return (
     <div>
@@ -29,4 +30,3 @@ function Bible() {
 }
 
 export default Bible;
-
