@@ -94,7 +94,7 @@ for book in books:
     print(f"progress: norm: {book}")
     driver.get(f"https://archive.md/o/QzsP1/bible.salterrae.net/kougo/html/{book}.html")
     page_content = driver.page_source
-    file_path    = f"templates/old/norm/{book}.htm"
+    file_path    = f"templates/norm/{book}.htm"
     write(file_path, parse_norm(page_content))
 
 books = [
@@ -179,7 +179,7 @@ for book in books:
     )
     driver.switch_to.frame(iframe)
     page_content = driver.page_source
-    file_path    = f"templates/old/ruby/{book}.htm"
+    file_path    = f"templates/ruby/{book}.htm"
     write(file_path, parse_ruby(page_content))
 
 print(parse_ruby(page_content))

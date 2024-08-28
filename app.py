@@ -24,8 +24,8 @@ def bible(section='genesis'):
         is_rubi = request.args.get('rubi', 'true').lower() == 'true'
 
     if(is_rubi):
-        return render_template(f'old/ruby/index.html', section=section)
-    return render_template(f'old/norm/index.html', section=section)
+        return render_template(f'ruby/index.html', section=section)
+    return render_template(f'norm/index.html', section=section)
 
 if __name__ == '__main__':
     # app.run(debug=True)
