@@ -5,8 +5,10 @@ function BibleList({ title, books }) {
     <div className="section">
       <h1>{title}</h1>
       <ul>
-        {books.map(book => (
-          <li key={book}><a href={`/bible/${book}`}>{book}</a></li>
+        {books.map(([route, displayName]) => (
+          <li key={route}>
+            <a href={`/bible/${route}`}>{displayName}</a>
+          </li>
         ))}
       </ul>
     </div>
@@ -14,3 +16,4 @@ function BibleList({ title, books }) {
 }
 
 export default BibleList;
+
