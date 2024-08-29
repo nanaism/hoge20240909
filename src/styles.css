@@ -12,11 +12,19 @@ ruby {
     font-size: 24px;
     letter-spacing: normal; /* ルビの文字間隔もデフォルトに設定 */
 }
-rt,rb {
+
+rb {
     font-size: 16px;
-    color: #555;
+    color: white !important;
     letter-spacing: normal; /* ルビテキストの文字間隔をデフォルトに設定 */
 }
+
+rt {
+    font-size: 10px !important;
+    color: #FFD700 !important;
+    letter-spacing: normal; /* ルビテキストの文字間隔をデフォルトに設定 */
+}
+
 .sep {
     color: white;
     padding: 0 5px; 
@@ -35,6 +43,13 @@ rt,rb {
     margin-left: 1em;
     color: white;
 }
+
+em {
+    color: black !important;
+    background-color: #FFD700;
+    padding: 0 8px 0 0;
+}
+
 .toggle-button {
     background-color: #FFD700;
     color: black;
