@@ -39,7 +39,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://keitaroemotion.github.io/bibleasmr",
+  "homepage": ".",
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }
