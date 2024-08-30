@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bibleweb/static/css/main.ca62ab0f.css",
-    "main.js": "/bibleweb/static/js/main.b6119ef8.js",
-    "index.html": "/bibleweb/index.html",
-    "main.ca62ab0f.css.map": "/bibleweb/static/css/main.ca62ab0f.css.map",
-    "main.b6119ef8.js.map": "/bibleweb/static/js/main.b6119ef8.js.map"
+    "main.css": "/bibleasmr/static/css/main.ca62ab0f.css",
+    "main.js": "/bibleasmr/static/js/main.c61553d3.js",
+    "index.html": "/bibleasmr/index.html",
+    "main.ca62ab0f.css.map": "/bibleasmr/static/css/main.ca62ab0f.css.map",
+    "main.c61553d3.js.map": "/bibleasmr/static/js/main.c61553d3.js.map"
   },
   "entrypoints": [
     "static/css/main.ca62ab0f.css",
-    "static/js/main.b6119ef8.js"
+    "static/js/main.c61553d3.js"
   ]
 }
