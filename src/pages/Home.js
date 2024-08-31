@@ -48,7 +48,7 @@ function Home() {
             ['habakkuk', 'ハバクク書'],
             ['zephaniah', 'ゼパニヤ書'],
             ['haggai', 'ハガイ書'],
-            ['zechariah', 'ゼカリヤ書'],
+            ['zecariah', 'ゼカリヤ書'],
             ['malachi', 'マラキ書']
           ]}
         />
