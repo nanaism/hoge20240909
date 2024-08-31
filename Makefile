@@ -1,10 +1,10 @@
 start:
 	npm start
+run:
+	sudo node server.js
 b:
 	npm run build
-	sudo systemctl restart nginx
 deploy:
-	rm -rf node_modules/.cache/gh-pages
 	npm run deploy
 open:
 	open https://keitaroemotion.github.io/bibleasmr/
