@@ -3,6 +3,7 @@ start:
 kill:
 	sh ./scripts/kill.sh 
 run:
+	npm run build
 	sudo node server.js 
 b:
 	npm run build
