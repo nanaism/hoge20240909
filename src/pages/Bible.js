@@ -11,6 +11,9 @@ function Bible() {
     const isRuby = searchParams.get('ruby') === 'true';
     const type = isRuby ? "ruby" : "norm";
 
+    console.log(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`);
+    console.log(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`);
+    console.log(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`);
     fetch(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`)
       .then(response => response.text())
       .then(data => setContent(data))
