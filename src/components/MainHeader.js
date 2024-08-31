@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles.css';
 
-function Header() {
+function MainHeader() {
   const [isRuby, setIsRubi] = useState(false);
   return (
     <div className="header">
@@ -12,4 +12,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default MainHeader;

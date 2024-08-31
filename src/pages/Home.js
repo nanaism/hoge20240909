@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
+import MainHeader from '../components/MainHeader';
 import BibleList from '../components/BibleList';
 import './styles.css';
 
 function Home() {
   return (
     <div>
-      <Header />
+      <MainHeader />
       <div className="container">
         <BibleList
           title="旧約聖書"
