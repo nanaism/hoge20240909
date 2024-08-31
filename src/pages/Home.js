@@ -1,11 +1,14 @@
 import React from 'react';
 import MainHeader from '../components/MainHeader';
+import Footer from '../components/Footer';
 import BibleList from '../components/BibleList';
+import Ad from '../components/Ad';
 import './styles.css';
+import './main.css';
 
 function Home() {
   return (
-    <div>
+    <div className="body">
       <MainHeader />
       <div className="container">
         <BibleList
@@ -85,7 +88,10 @@ function Home() {
             ['revelation', 'ヨハネの黙示録']
           ]}
         />
+        <br/>
+        <Ad />
       </div>
+      <Footer />
     </div>
   );
 }

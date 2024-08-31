@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Bible() {
   const { section } = useParams();
@@ -28,6 +29,7 @@ function Bible() {
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

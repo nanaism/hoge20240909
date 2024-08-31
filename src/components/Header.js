@@ -12,13 +12,15 @@ function Header() {
 
   return (
     <div className="header">
-      <span className="c1">
-        <a href="/">ASMRキリスト教会</a>
-      </span>
-      <span className="sep">|</span>
-      <button className="toggle-button" onClick={toggleRuby}>
-        {new URLSearchParams(window.location.search).get('ruby') === 'true' ? 'ルビを外す' : 'ルビを付ける'}
-      </button>
+      <div className="leftarea">
+        <span className="c1">
+          <a href="/">ASMRキリスト教会</a>
+        </span>
+        <span className="sep"></span>
+        <button className="toggle-button" onClick={toggleRuby}>
+          {new URLSearchParams(window.location.search).get('ruby') === 'true' ? 'ルビを外す' : 'ルビを付ける'}
+        </button>
+      </div>
     </div>
   );
 }

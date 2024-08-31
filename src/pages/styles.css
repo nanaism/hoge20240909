@@ -5,6 +5,12 @@ body {
     letter-spacing: normal; /* 文字間隔をデフォルトに設定 */
     background-color: black;
 }
+
+.catch {
+    color: white;
+    padding: 0em 1em;
+}
+
 h2, h3, p {
     margin-left: 0;
     letter-spacing: normal; /* 見出しや段落の文字間隔をデフォルトに設定 */
@@ -26,6 +32,7 @@ rt,rb {
 .section {
     flex: 1;        
     padding: 10px;
+    background-color: black;
 }
 .section + .section {
     margin-left: 20px;      
@@ -36,13 +43,12 @@ rt,rb {
     justify-content: space-between;
     margin: auto;
     padding: 2em;
-    width: 60%;
+    width: 80%;
     color: #FFD700;
 }
 
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
-
 }
 @media screen and (max-width: 480px) {
     .section {
@@ -56,7 +62,12 @@ rt,rb {
         justify-content: start;
         color: #FFD700;
         padding: 2em 0em;
+        font-size: 1.5em;
     }
+}
+
+.leftarea {
+    width: 100%;
 }
 
 .header {
@@ -83,6 +94,7 @@ rt,rb {
     background-color: #FFD700;
 }
 .c1 {
+    padding: 0.1em;
     color: #FFD700;    
 }
 .c2 {

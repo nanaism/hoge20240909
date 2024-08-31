@@ -40,6 +40,9 @@ rt {
     margin: 0;
     padding: 10px 20px;
     z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
 }
 .content {
     margin-top: 60px; /* Offset the content to account for the fixed header */
@@ -69,6 +72,17 @@ em {
 .c2 {
     color: white;    
 }
+.c3 {
+    color: #FFD700;    
+    margin: right;
+    width: 300px;
+}
+
+@media screen and (max-width: 480px) {
+    .c3 {
+    }
+}
+
 a:link,
 a:visited,
 a:hover,

@@ -1,5 +1,21 @@
+li {
+    list-style-type: none;
+    padding-left: 0;
+}
+
 li:hover {
-    color: black;
-    background-color: #FFD700;
-    width: 70%;
+    color: white;
+}
+
+.ad {
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+
+@media screen and (max-width: 480px) {
+  li {
+      padding: 0.3em 0em;
+  }
 }
