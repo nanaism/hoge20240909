@@ -7,16 +7,16 @@ function Ad() {
       <h1></h1>
 
       <div>
-        <ul>
-            <li>
+        <div>
+            <div>
                 ASMRキリスト教会とは？
-            </li>
-            <li>
+            </div>
+            <div>
                 <a target="_blank" href="https://www.kirishin.com/2024/05/19/66663/">
                 メディア掲載: キリスト新聞様
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
       </div>
       <div>
         <iframe

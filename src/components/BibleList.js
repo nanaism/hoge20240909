@@ -5,13 +5,13 @@ function BibleList({ title, books }) {
   return (
     <div className="section">
       <h1>{title}</h1>
-      <ul>
+      <div>
         {books.map(([route, displayName]) => (
-          <li key={route}>
+          <div class="li" key={route}>
             <a href={`/bible/${route}`}>{displayName}</a>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
