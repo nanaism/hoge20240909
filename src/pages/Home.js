@@ -32,7 +32,7 @@ function Home() {
             ['psalms', '詩篇'],
             ['proverbs', '箴言'],
             ['ecclesiastes', '伝道の書'],
-            ['songofsongs.htm', '雅歌'],
+            ['songofsongs', '雅歌'],
             ['isaiah', 'イザヤ書'],
             ['jeremiah', 'エレミヤ書'],
             ['lamentations', '哀歌'],
