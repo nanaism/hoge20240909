@@ -1,7 +1,9 @@
 start:
 	npm start
+kill:
+	sh ./scripts/kill.sh 
 run:
-	sudo node server.js
+	sudo node server.js 
 b:
 	npm run build
 deploy:
