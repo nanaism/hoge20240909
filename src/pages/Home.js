@@ -52,6 +52,7 @@ function Home() {
             ['malachi', 'マラキ書']
           ]}
         />
+        <br/>
         <BibleList
           title="新約聖書"
           books={[

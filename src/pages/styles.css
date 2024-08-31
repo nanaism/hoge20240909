@@ -23,6 +23,14 @@ rt,rb {
     padding: 0 5px; 
 }
 
+.section {
+    flex: 1;        
+    padding: 10px;
+}
+.section + .section {
+    margin-left: 20px;      
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -32,13 +40,23 @@ rt,rb {
     color: #FFD700;
 }
 
-.section {
-    flex: 1;                /* Allow sections to grow equally */
-    padding: 10px;          /* Add some padding */
-}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
 
-.section + .section {
-    margin-left: 20px;      /* Add some space between the two sections */
+}
+@media screen and (max-width: 480px) {
+    .section {
+        flex: 1;        
+        padding: 10px;
+        width: 100%;
+    }
+    .container {
+        margin: auto;
+        display: block;
+        justify-content: start;
+        color: #FFD700;
+        padding: 2em 0em;
+    }
 }
 
 .header {
@@ -51,7 +69,7 @@ rt,rb {
     z-index: 1000;
 }
 .content {
-    margin-top: 60px; /* Offset the content to account for the fixed header */
+    margin-top: 60px;
     margin-left: 1em;
 }
 .toggle-button {
