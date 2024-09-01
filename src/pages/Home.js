@@ -5,6 +5,7 @@ import BibleList from '../components/BibleList';
 import Ad from '../components/Ad';
 import './styles.css';
 import './main.css';
+import { Helmet } from 'react-helmet';
 
 function Home() {
   return (

@@ -16,3 +16,4 @@ setup:
 	npm i react-xml-viewer
 	npm install express
 	npm install react-markdown remark-gfm
+	npm install react-helmet
