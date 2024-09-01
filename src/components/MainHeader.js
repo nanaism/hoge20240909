@@ -7,7 +7,6 @@ function MainHeader() {
     <div className="header">
       <span className="c1">
         <a href="/">ASMRキリスト教会</a>
-        <span className="catch">〜死後さばきにあうよ、おにいちゃん〜</span>
       </span>
       <div className="c3">
          <a target="_blank" href="https://x.com/asmrchurch"><img 

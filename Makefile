@@ -15,3 +15,4 @@ setup:
 	npm install react-router-dom
 	npm i react-xml-viewer
 	npm install express
+        npm install react-markdown remark-gfm
