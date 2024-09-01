@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
 import '../blog.css';
-import MainHeader from '../components/MainHeader';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogComponent from '../components/BlogComponent';
 
@@ -17,7 +17,7 @@ function BlogList() {
 
   return (
     <div>
-      <MainHeader />
+      <Header />
       <div className="blog-section">
         <h1 className="blog-list-title">ブログ一覧</h1>
         <div className="blog-list">

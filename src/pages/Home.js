@@ -1,5 +1,5 @@
 import React from 'react';
-import MainHeader from '../components/MainHeader';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BibleList from '../components/BibleList';
 import Ad from '../components/Ad';
@@ -9,7 +9,7 @@ import './main.css';
 function Home() {
   return (
     <div className="body">
-      <MainHeader />
+      <Header />
       <div className="container">
         <BibleList
           title="旧約聖書"

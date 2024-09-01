@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import MainHeader from '../components/MainHeader';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BlogComponent from '../components/BlogComponent';
 import '../blog.css';
@@ -30,7 +30,7 @@ function Blog() {
 
   return (
     <div>
-      <MainHeader />
+      <Header />
       <h1>Blog Post</h1>
       <div className="blog-section">
         <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />

@@ -23,7 +23,7 @@ function Bible() {
 
   return (
     <div>
-      <Header />
+      <Header bible={true} />
       <div className="content">
         <section>
           <div dangerouslySetInnerHTML={{ __html: content }} />

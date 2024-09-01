@@ -18,7 +18,7 @@ function Ad() {
             </div>
         </div>
       </div>
-      <div className="c3">
+      <div className="">
          <a target="_blank" href="https://www.dlsite.com/home/work/=/product_id/RJ433352.html"><img 
             src={`${process.env.PUBLIC_URL}/static/images/dlsite.png`}
             alt="x" 
