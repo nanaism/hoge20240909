@@ -1,0 +1,59 @@
+/* Ham.css */
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger .line.open {
+  background-color: #ccc; /* Change color when open */
+}
+
+/* The navigation menu is initially hidden */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ham {
+    padding: 0em 2.2em 0 1em;
+}
+
+.nav-menu ul li {
+  margin: 10px 0;
+}
+
+.nav-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* When the menu is open, display it */
+.nav-menu.open {
+  display: block;
+}

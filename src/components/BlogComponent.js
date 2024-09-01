@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import MainHeader from '../components/MainHeader';
-import Footer from '../components/Footer';
 import '../blog.css';
 
-function Blog({ id }) {  // Receive 'id' as a prop
+function BlogComponent({ id }) {  // Receive 'id' as a prop
   const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
@@ -27,13 +25,11 @@ function Blog({ id }) {  // Receive 'id' as a prop
 
   return (
     <div>
-      <MainHeader />
       <div className="blog-section">
         <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
       </div>
-      <Footer />
     </div>
   );
 }
 
-export default Blog;
+export default BlogComponent;

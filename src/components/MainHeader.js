@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import '../styles.css';
+import Ham from './Ham';
 
 function MainHeader() {
   const [isRuby, setIsRubi] = useState(false);
+
   return (
     <div className="header">
-      <span className="c1">
+      <div className="c1">
         <a href="/">ASMRキリスト教会</a>
-      </span>
+      </div>
       <div className="c3">
          <a target="_blank" href="https://x.com/asmrchurch"><img 
             src={`${process.env.PUBLIC_URL}/static/images/x.png`}
@@ -33,6 +35,10 @@ function MainHeader() {
             style={{ width: '35px', height: '35px' }}
             />
          </a>
+      
+      </div>
+      <div className="ham">
+         <Ham />
       </div>
     </div>
   );

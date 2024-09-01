@@ -40,9 +40,9 @@ rt {
     margin: 0;
     padding: 10px 20px;
     z-index: 1000;
+    font-size: 1em;
 
     display: flex;
-    justify-content: space-between;
 }
 .content {
     margin-top: 60px; /* Offset the content to account for the fixed header */
@@ -68,14 +68,15 @@ em {
 }
 .c1 {
     color: #FFD700;    
+    width: 80%;
 }
 .c2 {
     color: white;    
 }
 .c3 {
     color: #FFD700;    
-    margin: right;
     width: 300px;
+    text-align: right;
 }
 
 @media screen and (max-width: 480px) {

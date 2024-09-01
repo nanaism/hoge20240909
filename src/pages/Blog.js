@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import MainHeader from '../components/MainHeader';
 import Footer from '../components/Footer';
+import BlogComponent from '../components/BlogComponent';
 import '../blog.css';
 
 function Blog() {
