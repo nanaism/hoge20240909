@@ -14,7 +14,7 @@ function Header({bible}) {
   return (
     <div className="header">
       <div className="c1">
-        <a href="/">ASMRキリスト教会</a>
+        <a href="/">聖書ASMR</a>
         {bible && (
            <>
              <span className="sep"></span>

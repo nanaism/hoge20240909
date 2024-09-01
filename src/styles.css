@@ -63,7 +63,6 @@ em {
     border: none;
     cursor: pointer;
     padding: 0.5em 0.8em;
-    border-radius: 50% !important;
 }
 .toggle-button:hover {
     background-color: black !important;

@@ -61,7 +61,7 @@ rt,rb {
         display: block;
         justify-content: start;
         color: #FFD700;
-        padding: 2em 0em;
+        padding: 1.5em 0em;
         font-size: 1.5em;
     }
 }
@@ -80,19 +80,10 @@ rt,rb {
     z-index: 1000;
 }
 .content {
-    margin-top: 60px;
+    margin-top: 75px;
     margin-left: 1em;
 }
-.toggle-button {
-    background-color: #FFD700;
-    color: black;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.toggle-button:hover {
-    background-color: #FFD700;
-}
+
 .c1 {
     padding: 0.1em;
     color: #FFD700;    
