@@ -18,6 +18,8 @@ function Header({ bible }) {
     <div className="header">
       <Helmet>
         <meta charSet="UTF-8" />
+        <link rel="icon" href="/static/favicon/favicon.ico" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>若者のためのキリスト教 - ストレスと精神的な悩みを乗り越える</title>
         <meta name="description" content="10代〜20代の若者へ。ストレスや精神的な悩み、自殺願望に苦しむあなたに、キリスト教の教えと救いを提供します。睡眠障害や生きづらさを感じるあなたへ、聖書の言葉を通じて安らぎと希望を見つけましょう。まずうちさぁ、屋上あるんだけどさぁ、焼いてかない？（丁寧）" />
