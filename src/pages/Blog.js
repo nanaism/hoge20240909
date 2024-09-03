@@ -3,37 +3,20 @@ import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '../components/Header';
+import MarkDown from '../components/MarkDown';
 import Footer from '../components/Footer';
-import BlogComponent from '../components/BlogComponent';
 import '../blog.css';
 
 function Blog() {
   const [markdown, setMarkdown] = useState('');
   const { id } = useParams();
 
-  useEffect(() => {
-    console.log(`/static/markdown/blog/${id}.md`);
-    fetch(`/static/markdown/blog/${id}.md`)
-      .then((response) => {
-        if (response.ok) {
-          return response.text(); // If response is OK, parse as text
-        } else {
-          throw new Error('Markdown file not found'); // Handle errors
-        }
-      })
-      .then((text) => setMarkdown(text))
-      .catch((error) => {
-        console.error(error);
-        setMarkdown('# 404 Not Found\nThe requested markdown file could not be found.');
-      });
-  }, [id]);
-
   return (
     <div>
       <Header />
-      <h1>Blog Post</h1>
-      <div className="blog-section">
-        <ReactMarkdown children={markdown} remarkPlugins={[remarkGfm]} />
+      <MarkDown path={`/blog/${id}`} />
+      <div className="return">
+      <a href="/blog">ブログ一覧</a>
       </div>
       <Footer />
     </div>
