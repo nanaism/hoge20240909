@@ -9,11 +9,13 @@ function Ad() {
       <div>
         <div>
             <div>
-                ASMRキリスト教会とは？
-            </div>
-            <div>
                 <a target="_blank" href="https://www.kirishin.com/2024/05/19/66663/">
                 メディア掲載: キリスト新聞様
+                </a>
+            </div>
+            <div>
+                <a target="_blank" href="/caption">
+                    キリスト教でメンタル回復・コスパ名言集
                 </a>
             </div>
         </div>
