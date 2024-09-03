@@ -8,7 +8,7 @@ run:
 b:
 	npm run build
 deploy:
-	npm run deploy
+	git pull; make kill; make run &
 open:
 	open https://keitaroemotion.github.io/bibleasmr/
 setup:
