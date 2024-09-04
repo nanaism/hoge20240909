@@ -19,6 +19,8 @@ function ListComponent({ type, title }) {
     <div>
       <Header />
       <div className="blog-section">
+        <h1>{title}</h1>
+        <hr/>
         <div className="blog-list">
           {articles.slice().reverse().map((id) => (
             <div key={id}>
