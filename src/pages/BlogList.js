@@ -5,8 +5,6 @@ import ListComponent from '../components/ListComponent';
 import MarkDown from '../components/MarkDown';
 
 function BlogList() {
-  const [articles, setArticles] = useState([]);
-
   return (
     <ListComponent type="blog" title={`ブログ一覧`} />
   );
