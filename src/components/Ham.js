@@ -19,6 +19,7 @@ function Ham() {
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/sermon">説教</a></li>
         </ul>
       </nav>
     </div>

@@ -20,9 +20,11 @@ function ListComponent({ type, title }) {
       <Header />
       <div className="blog-section">
         <div className="blog-list">
-          {articles.map((id) => (
+          {articles.slice().reverse().map((id) => (
             <div key={id}>
-              <MarkDown path={`/${type}/${id}`} />
+              <a href={`/${type}/${id}`}>
+                <MarkDown path={`/${type}/${id}`} />
+              </a>
               <hr/>
             </div>
           ))}
