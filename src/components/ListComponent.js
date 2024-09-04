@@ -13,19 +13,16 @@ function ListComponent({ type, title }) {
       .then((response) => response.json())
       .then((data) => setArticles(data.articles))
       .catch((error) => console.error('Error fetching list:', error));
-  }, []);
+  }, [type]);
 
   return (
     <div>
       <Header />
       <div className="blog-section">
-        <h1 className="blog-list-title">{title}</h1>
         <div className="blog-list">
           {articles.map((id) => (
             <div key={id}>
-              <a href={`/blog/${id}`}>
-                <MarkDown path={`/blog/${id}`} />
-              </a>
+              <MarkDown path={`/${type}/${id}`} />
               <hr/>
             </div>
           ))}
