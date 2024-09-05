@@ -24,13 +24,13 @@ h2, h3, p {
     letter-spacing: normal; /* 見出しや段落の文字間隔をデフォルトに設定 */
 }
 ruby {
-    font-size: 24px;
+    font-size: 1em !important;
     letter-spacing: normal; /* ルビの文字間隔もデフォルトに設定 */
 }
 
 rb {
-    font-size: 16px;
-    color: white !important;
+    font-size: 1em !important;
+    color: #FFD700 !important;
     letter-spacing: normal; /* ルビテキストの文字間隔をデフォルトに設定 */
 }
 
