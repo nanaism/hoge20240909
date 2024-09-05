@@ -9,6 +9,18 @@ ul {
     color: white;
 }
 
+.kirikan {
+    margin: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(1);
+    border-radius: 10px;
+}
+
+.kirikan:hover {
+  transform: scale(1.01); /* Scale the image up by 10% */
+  filter: brightness(1.1);
+}
+
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
 }
