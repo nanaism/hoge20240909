@@ -8,15 +8,6 @@ function Ad() {
 
       <div>
         <div>
-            <a href="https://www.youtube.com/@asmrchurch">
-            <img
-              src={`${process.env.PUBLIC_URL}/static/images/kirikan.jpg`}
-              alt="Kirikan chan"
-              className="kirikan"
-              style={{ width: '300px' }}
-            />
-            </a>
-
             <div>
                 <a target="_blank" href="https://www.kirishin.com/2024/05/19/66663/">
                 メディア掲載: キリスト新聞様
