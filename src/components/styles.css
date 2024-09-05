@@ -12,12 +12,12 @@ ul {
 .kirikan {
     margin: auto;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: brightness(1);
+    filter: brightness(0.5);
     border-radius: 10px;
 }
 
 .kirikan:hover {
-  transform: scale(1.01); /* Scale the image up by 10% */
+  transform: scale(1); /* Scale the image up by 10% */
   filter: brightness(1.1);
 }
 
