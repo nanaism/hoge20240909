@@ -20,3 +20,4 @@ setup:
 	npm install express
 	npm install react-markdown remark-gfm
 	npm install react-helmet
+	npm install react-share
