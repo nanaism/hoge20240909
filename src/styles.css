@@ -17,6 +17,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     letter-spacing: normal; /* 文字間隔をデフォルトに設定 */
+    font-size: 1.3em;
 }
 h2, h3, p {
     margin-left: 0;
@@ -93,6 +94,10 @@ em {
 }
 
 @media screen and (max-width: 480px) {
+
+    body {
+        font-size: 1em;
+    }
     .c3 {
     }
 }
