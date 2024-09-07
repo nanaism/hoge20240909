@@ -11,9 +11,8 @@ function Bible() {
   useEffect(() => {
     let type = searchParams.get('type');
 
-    // Set to 'norm' if the type is not 'norm', 'ruby', or 'en'
     if (!['norm', 'ruby', 'en'].includes(type)) {
-      type = 'en';
+      type = 'norm';
       setSearchParams({ type });
     }
 

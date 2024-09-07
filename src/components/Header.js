@@ -25,7 +25,6 @@ function Header({ bible }) {
       newRubyState = 'norm';
     }
 
-    // Update the URL parameter
     urlParams.set('type', newRubyState);
     window.location.search = urlParams.toString(); // Reload the page with the new state
 
