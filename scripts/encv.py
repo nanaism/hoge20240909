@@ -23,7 +23,6 @@ patterns=[
    , "TD WIDTH"
    , "botLink"
    , "</TD></TR></table><br></div>"
-   , "<BR>"
    , "<TR>"
    , "<META"
 ]
