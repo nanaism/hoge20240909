@@ -8,7 +8,7 @@ function BibleList({ title, type, books }) {
       <div>
         {books.map(([route, displayName]) => (
           <div className="li" key={route}>
-            <a href={`/bible/${route}?type={type}`}>{type === 'en' ? route : displayName}</a>
+            <a href={`/bible/${route}?type=${type}`}>{type === 'en' ? route : displayName}</a>
           </div>
         ))}
       </div>
