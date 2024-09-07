@@ -36,8 +36,14 @@ def match(line):
            return False
    return True
 
+lines=[]
+
 with open(file, 'r') as file:
     for line in file:
         line = line.strip()
         if(match(line)):
             print(line)
+            lines.append(line)
+
+with open(file, 'w') as file:
+    file.writelines(lines)
