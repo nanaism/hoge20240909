@@ -20,7 +20,7 @@ function Header({ bible }) {
     if (pageType === 'norm') {
       newRubyState = 'ruby';
     } else if (pageType === 'ruby') {
-      newRubyState = 'english';
+      newRubyState = 'en';
     } else {
       newRubyState = 'norm';
     }
@@ -50,7 +50,7 @@ function Header({ bible }) {
           <>
             <span className="sep"></span>
             <button className="toggle-button" onClick={toggleRuby}>
-              {pageType === 'norm' ? '漢' : pageType === 'ruby' ? 'あ' : 'English'}
+              {pageType === 'norm' ? '漢' : pageType === 'ruby' ? 'あ' : 'en'}
             </button>
           </>
         )}

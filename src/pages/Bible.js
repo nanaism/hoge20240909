@@ -13,8 +13,7 @@ function Bible() {
 
     // Set to 'norm' if the type is not 'norm', 'ruby', or 'en'
     if (!['norm', 'ruby', 'en'].includes(type)) {
-      type = 'norm';
-      // Update the URL with the default type 'norm'
+      type = 'en';
       setSearchParams({ type });
     }
 
