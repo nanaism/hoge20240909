@@ -35,14 +35,26 @@ def match(line):
            return False
    return True
 
+def fitline(line):
+   return line.replace("<BR>\n<BR>","<BR>")\
+              .replace("<BR>\n<BR>","<BR>")\
+              .replace("<TITLE>", "<h1 class='et'>", 1)\
+              .replace("</TITLE>", "</h1>", 1)\
+              .replace('"content"', '"contenten"')\
+              .replace("width=468", "")
+
 lines=[]
 
+tc=0
 with open(filepath, 'r') as file:
     for line in file:
         line = line.strip()
-        if(match(line)):
-            print(line)
-            lines.append(line + '\n')
+        if("TITLE" in line):
+            tc = tc + 1
+            if(tc < 2):
+                lines.append(fitline(line).strip())
+        elif(match(line)):
+            lines.append(fitline(line).strip())
 
 with open(filepath, 'w') as file:
-    file.writelines(lines)
+    file.write(fitline("\n".join(lines)))

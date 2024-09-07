@@ -1,6 +1,35 @@
 @media screen and (max-width: 768px) {
 }
 
+.vn {
+    color: #FFD700 !important;
+    padding: 0;
+    margin: auto;
+    vertical-align: top;
+}
+
+.v {
+    width: 100%;
+}
+
+td {
+    height: 1em;
+}
+
+.et {
+    top: 100px !important;
+    font-size: 1em;
+    text-align: center;
+    padding: 1.1em 0;
+    height: 10px;
+    margin: auto; 
+}
+
+#contenten {
+    width: 46%;
+    margin: auto !important;
+}
+
 .sharecontainer {
 }
 
