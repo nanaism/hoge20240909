@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BibleList from '../components/BibleList';
@@ -6,14 +6,36 @@ import Ad from '../components/Ad';
 import './styles.css';
 import './main.css';
 import { Helmet } from 'react-helmet';
+import { useSearchParams } from 'react-router-dom';
 
 function Home() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [type, setType] = useState('ja'); // default to 'ja'
+  const [oldTitle, setOldTitle] = useState('旧約聖書');
+  const [newTitle, setNewTitle] = useState('新約聖書');
+
+  // Effect to update titles and type when URL parameters change
+  useEffect(() => {
+    let urlType = searchParams.get('type') || 'norm';
+    if (!['norm', 'en'].includes(urlType)) {
+      urlType = 'norm';
+      setSearchParams({ type: 'norm' });
+    }
+
+    setType(urlType);
+
+    // Update titles based on type
+    setOldTitle(urlType === 'en' ? 'The Old Testament' : '旧約聖書');
+    setNewTitle(urlType === 'en' ? 'The New Testament' : '新約聖書');
+  }, [searchParams, setSearchParams]);
+
   return (
     <div className="body">
       <Header />
       <div className="container">
         <BibleList
-          title="旧約聖書"
+          title={oldTitle}
+          type={type}
           books={[
             ['genesis', '創世記'],
             ['exodus', '出エジプト記'],
@@ -58,7 +80,8 @@ function Home() {
         />
         <br/>
         <BibleList
-          title="新約聖書"
+          title={newTitle}
+          type={type}
           books={[
             ['matthew', 'マタイによる福音書'],
             ['mark', 'マルコによる福音書'],

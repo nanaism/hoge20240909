@@ -4,32 +4,48 @@ import '../styles.css';
 import Ham from './Ham';
 
 function Header({ bible }) {
-  const [pageType, setRubyState] = useState('norm');
+  const [pageType, setState] = useState('norm');
 
-  // Initialize pageType based on URL parameter when component mounts
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const currentRuby = urlParams.get('type');
-    setRubyState(currentRuby || 'norm');  // Default to 'norm' if no parameter
+    setState(currentRuby || 'norm');
   }, []);
 
   const toggleRuby = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    let newRubyState;
+    let newState;
 
     if (pageType === 'norm') {
-      newRubyState = 'ruby';
+      newState = 'ruby';
     } else if (pageType === 'ruby') {
-      newRubyState = 'en';
+      newState = 'en';
     } else {
-      newRubyState = 'norm';
+      newState = 'norm';
     }
 
-    urlParams.set('type', newRubyState);
+    urlParams.set('type', newState);
     window.location.search = urlParams.toString(); // Reload the page with the new state
 
-    setRubyState(newRubyState); // Update the state
+    setState(newState); // Update the state
   };
+
+  const toggleLang = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let newState;
+
+    if (pageType === 'norm') {
+      newState = 'en';
+    } else {
+      newState = 'norm';
+    }
+
+    urlParams.set('type', newState);
+    window.location.search = urlParams.toString(); // Reload the page with the new state
+
+    setState(newState); // Update the state
+  };
+
 
   return (
     <div className="header">
@@ -49,7 +65,15 @@ function Header({ bible }) {
           <>
             <span className="sep"></span>
             <button className="toggle-button" onClick={toggleRuby}>
-              {pageType === 'norm' ? '漢' : pageType === 'ruby' ? 'あ' : 'en'}
+              {pageType === 'norm' ? '聖' : pageType === 'ruby' ? 'せ' : 'E'}
+            </button>
+          </>
+        )}
+        {!bible && (
+          <>
+            <span className="sep"></span>
+            <button className="toggle-button" onClick={toggleLang}>
+              {pageType === 'norm' ? '聖' : 'E'}
             </button>
           </>
         )}
