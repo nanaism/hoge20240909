@@ -35,3 +35,4 @@ jq --argjson new_index "$new_index" '.articles += [$new_index|tostring]' "$JSON_
 
 echo "Updated $JSON_FILE with the new article index $new_index"
 
+vim $new_md_file
