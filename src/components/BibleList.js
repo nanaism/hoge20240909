@@ -17,4 +17,3 @@ function BibleList({ title, type, books }) {
 }
 
 export default BibleList;
-

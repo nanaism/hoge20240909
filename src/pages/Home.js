@@ -10,11 +10,10 @@ import { useSearchParams } from 'react-router-dom';
 
 function Home() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [type, setType] = useState('ja'); // default to 'ja'
+  const [type, setType] = useState('ja');
   const [oldTitle, setOldTitle] = useState('旧約聖書');
   const [newTitle, setNewTitle] = useState('新約聖書');
 
-  // Effect to update titles and type when URL parameters change
   useEffect(() => {
     let urlType = searchParams.get('type') || 'norm';
     if (!['norm', 'en'].includes(urlType)) {
