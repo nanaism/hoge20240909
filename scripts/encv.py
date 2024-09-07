@@ -4,7 +4,7 @@ import sys
 
 section=sys.argv[1]
 
-file=f"public/static/html/en/{section}.htm"
+filepath=f"public/static/html/en/{section}.htm"
 
 patterns=[
    "<TABLE WIDTH=655 CELLSPACING=0 CELLPADDING=0 BORDER=0>"
@@ -38,12 +38,12 @@ def match(line):
 
 lines=[]
 
-with open(file, 'r') as file:
+with open(filepath, 'r') as file:
     for line in file:
         line = line.strip()
         if(match(line)):
             print(line)
-            lines.append(line)
+            lines.append(line + '\n')
 
-with open(file, 'w') as file:
+with open(filepath, 'w') as file:
     file.writelines(lines)
