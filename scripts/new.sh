@@ -3,8 +3,8 @@ type=$1
 #!/bin/bash
 
 # Set the paths
-JSON_FILE="public/static/markdown/sermon/list.json"
-MD_DIR="public/static/markdown/sermon"
+JSON_FILE="public/static/markdown/$type/list.json"
+MD_DIR="public/static/markdown/$type"
 
 # Check if JSON file exists
 if [[ ! -f "$JSON_FILE" ]]; then
