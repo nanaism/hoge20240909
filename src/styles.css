@@ -125,12 +125,11 @@ em {
 @media screen and (max-width: 480px) {
     #contenten {
         width: 90%;
-        font-size: 1.3em;
         margin: auto !important;
     }
 
     body {
-        font-size: 1em;
+        font-size: 1.3em;
     }
     .c3 {
     }
