@@ -5,18 +5,24 @@ import Footer from '../components/Footer';
 
 function Bible() {
   const { section } = useParams();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    const isRuby = searchParams.get('ruby') === 'true';
-    const type = isRuby ? "ruby" : "norm";
+    let type = searchParams.get('type');
+
+    // Set to 'norm' if the type is not 'norm', 'ruby', or 'en'
+    if (!['norm', 'ruby', 'en'].includes(type)) {
+      type = 'norm';
+      // Update the URL with the default type 'norm'
+      setSearchParams({ type });
+    }
 
     fetch(`${process.env.PUBLIC_URL}/static/html/${type}/${section}.htm`)
       .then(response => response.text())
       .then(data => setContent(data))
       .catch(error => console.error('Error loading the HTML content:', error));
-  }, [section, searchParams]); // Include searchParams as a dependency
+  }, [section, searchParams, setSearchParams]); // Include setSearchParams as a dependency
 
   return (
     <div>

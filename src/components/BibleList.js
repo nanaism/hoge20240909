@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 
 function BibleList({ title, books }) {
+  // todo: add default type
   return (
     <div className="section">
       <h1>{title}</h1>
