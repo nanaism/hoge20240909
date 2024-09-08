@@ -3,7 +3,7 @@
 import re
 
 def getnum(text):
-    pattern = r"第(\d+)章"
+    pattern = r"第(\d+)篇"
 
     match = re.search(pattern, text.strip())
 
@@ -29,12 +29,10 @@ with open(filename, 'r', encoding='utf-8') as file:
     for line in file:
         if("h3" in line):
             tag=f"c{getnum(line)}"
-            a = f"第{tag.replace('c', '')}章"
-            lines.append(line.replace("9.36px;\">", f"9.36px;\"><a href=\"#{tag}\">{a}</a>").replace(f"</a>{a}", "</a>"))
+            lines.append(line.replace("<h3", f"<h3 id=\"{tag}\""))
         elif("em" in line):
             tag=getindex(line)
-            a = tag.replace("-", ":")
-            lines.append(line.replace("3.2px;\">", f"3.2px;\"><a href=\"#{tag}\">{a}</a>").replace(f"</a>{a}", "</a>"))
+            lines.append(line.replace("<em", f"<em id=\"{tag}\""))
         else:
             lines.append(line)
 
