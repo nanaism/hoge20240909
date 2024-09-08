@@ -31,11 +31,11 @@ with open(filename, 'r', encoding='utf-8') as file:
             tag=f"c{getnum(line)}"
             a = f"第{tag.replace('c', '')}章"
             lines.append(line.replace("<h3", f"<h3 id=\"{tag}\""))
-            lines.append(line.replace("9.36px;\">", f"9.36px;\"><a href=\"#{tag}\">{a}</a>"))
+            lines.append(line.replace("9.36px;\">", f"9.36px;\"><a href=\"#{tag}\">{a}</a>").replace(f"</a>{a}", "</a>"))
         elif("em" in line):
             tag=getindex(line)
             a = tag.replace("-", ":")
-            lines.append(line.replace("3.2px;\">", f"3.2px;\"><a href=\"#{tag}\">{a}</a>"))
+            lines.append(line.replace("3.2px;\">", f"3.2px;\"><a href=\"#{tag}\">{a}</a>").replace(f"</a>{a}", "</a>"))
         else:
             lines.append(line)
 
@@ -43,4 +43,4 @@ text="".join(lines)
 
 # with open(filename, 'w', encoding='utf-8') as file:
 #     file.write(text)
-print text
+print(text)
