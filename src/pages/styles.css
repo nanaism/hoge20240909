@@ -74,6 +74,10 @@ rt,rb {
     width: 100%;
 }
 
+html {
+    scroll-padding-top: 60px; 
+}
+
 .header {
     position: fixed;
     top: 0;
