@@ -28,7 +28,7 @@ filename=f"public/static/html/norm/{sys.argv[1]}.htm"
 with open(filename, 'r', encoding='utf-8') as file:
     for line in file:
         if("h3" in line):
-            tag=f"c-{getnum(line)}"
+            tag=f"c{getnum(line)}"
             lines.append(line.replace("<h3", f"<h3 id=\"{tag}\""))
         elif("em" in line):
             tag=getindex(line)
