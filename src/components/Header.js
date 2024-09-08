@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import '../styles.css';
 import Ham from './Ham';
 
-function Header({ bible }) {
+function Header({ bible, title, description, url, image }) {
   const [pageType, setState] = useState('norm');
 
   useEffect(() => {
@@ -46,17 +46,29 @@ function Header({ bible }) {
     setState(newState); // Update the state
   };
 
-
   return (
     <div className="header">
       <Helmet>
         <meta charSet="UTF-8" />
         <link rel="icon" href="/static/favicon/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ASMRキリスト教会</title>
-        <meta name="description" content="10代〜20代の若者へ..." />
-        <meta name="keywords" content="..." />
-        {/* Add other meta tags here */}
+        <title>{title || "ASMRキリスト教会"}</title>
+        <meta name="description" content={description || "10代〜20代の若者へ..."} />
+        <meta name="keywords" content="聖書, キリスト教, ASMR, 教会" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={title || "ASMRキリスト教会"} />
+        <meta property="og:description" content={description || "10代〜20代の若者へ..."} />
+        <meta property="og:url" content={url || "https://www.asmrchurch.com"} />
+        <meta property="og:image" content={image || "https://www.asmrchurch.com/static/images/kirikan.jpg"} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title || "ASMRキリスト教会"} />
+        <meta name="twitter:description" content={description || "10代〜20代の若者へ..."} />
+        <meta name="twitter:url" content={url || "https://www.asmrchurch.com"} />
+        <meta name="twitter:image" content={image || "https://www.asmrchurch.com/static/images/kirikan.jpg"} />
       </Helmet>
 
       <div className="c1">
