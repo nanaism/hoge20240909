@@ -30,7 +30,6 @@ with open(filename, 'r', encoding='utf-8') as file:
         if("h3" in line):
             tag=f"c{getnum(line)}"
             a = f"第{tag.replace('c', '')}章"
-            lines.append(line.replace("<h3", f"<h3 id=\"{tag}\""))
             lines.append(line.replace("9.36px;\">", f"9.36px;\"><a href=\"#{tag}\">{a}</a>").replace(f"</a>{a}", "</a>"))
         elif("em" in line):
             tag=getindex(line)
@@ -41,6 +40,5 @@ with open(filename, 'r', encoding='utf-8') as file:
 
 text="".join(lines)
 
-# with open(filename, 'w', encoding='utf-8') as file:
-#     file.write(text)
-print(text)
+with open(filename, 'w', encoding='utf-8') as file:
+    file.write(text)
