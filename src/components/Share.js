@@ -8,7 +8,7 @@ import {
 } from 'react-share';
 import { 
   FacebookIcon, 
-  TwitterIcon, 
+  XIcon, 
   EmailIcon, 
   RedditIcon, 
   LinkedinIcon 
@@ -20,9 +20,9 @@ const Share = ({title, url}) => {
       <span className="tt"> 布教する: </span>
       <div className="share">
 
-        {/* Twitter (X) Share Button */}
+        {/* X (X) Share Button */}
         <TwitterShareButton url={url} title={title}>
-          <TwitterIcon size={32} round={false} />
+          <XIcon size={32} round={false} />
         </TwitterShareButton>
 
         {/* Facebook Share Button */}
