@@ -60,6 +60,7 @@ function Header({ bible, title, description, url, image }) {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title || "ASMRキリスト教会"} />
         <meta
           property="og:description"
@@ -75,6 +76,8 @@ function Header({ bible, title, description, url, image }) {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@asmrchurch" />
+        <meta name="twitter:creator" content="@asmrchurch" />
         <meta name="twitter:site" content="@asmrchurch" />
         <meta name="twitter:creator" content="@asmrchurch" />
         <meta name="twitter:title" content={title || "ASMRキリスト教会"} />
