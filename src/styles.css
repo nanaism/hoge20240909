@@ -48,6 +48,9 @@ body {
     letter-spacing: normal; /* 文字間隔をデフォルトに設定 */
     font-size: 1.3em;
 }
+h3:hover {
+    color: #00FFFF !important;
+}
 h2, h3, p {
     margin-left: 0;
     letter-spacing: normal; /* 見出しや段落の文字間隔をデフォルトに設定 */
@@ -97,6 +100,10 @@ em {
     padding: 0 8px 0 0;
 }
 
+em:hover {
+    color: #00FFFF !important;
+    background-color: black;
+}
 
 .toggle-button {
     background-color: #FFD700;
