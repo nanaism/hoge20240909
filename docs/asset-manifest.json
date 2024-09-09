@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hoge20240909/static/css/main.8a1d7d5f.css",
+    "main.js": "/hoge20240909/static/js/main.0839f1da.js",
+    "index.html": "/hoge20240909/index.html",
+    "main.8a1d7d5f.css.map": "/hoge20240909/static/css/main.8a1d7d5f.css.map",
+    "main.0839f1da.js.map": "/hoge20240909/static/js/main.0839f1da.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a1d7d5f.css",
+    "static/js/main.0839f1da.js"
+  ]
+}
