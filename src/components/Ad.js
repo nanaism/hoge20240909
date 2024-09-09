@@ -15,7 +15,7 @@ function Ad() {
           </div>
           <div>
             <a target="_blank" rel="noopener noreferrer" href="/caption">
-              キリスト教でメンタル回復・コスパ名言集
+              コスパ名言集
             </a>
           </div>
         </div>
